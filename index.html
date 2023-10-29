@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Event Ticket Selling</title>
+</head>
+<body>
+    <h1>Event Ticket Selling</h1>
+    <div class="container">
+        <div class="event-section">
+            <h2>Team Events</h2>
+            <div class="event-card" data-event-id="teamEvent1">
+                <h3>Team Event 1</h3>
+                <p>Event details for Team Event 1...</p>
+                <button class="book-button">Book Tickets</button>
+            </div>
+            <div class="event-card" data-event-id="teamEvent2">
+                <h3>Team Event 2</h3>
+                <p>Event details for Team Event 2...</p>
+                <button class="book-button">Book Tickets</button>
+            </div>
+        </div>
+        <div class="event-section">
+            <h2>Solo Events</h2>
+            <div class="event-card" data-event-id="soloEvent1">
+                <h3>Solo Event 1</h3>
+                <p>Event details for Solo Event 1...</p>
+                <button class="book-button">Book Tickets</button>
+            </div>
+            <div class="event-card" data-event-id="soloEvent2">
+                <h3>Solo Event 2</h3>
+                <p>Event details for Solo Event 2...</p>
+                <button class="book-button">Book Tickets</button>
+            </div>
+        </div>
+    </div>
+    <div class="registration-containt">
+        <button id="registration-button" style="display: none;">Register</button>
+    </div>
+    
+    <div class="registration-popup" id="registration-popup">
+        <button id="close-registration-popup">Close</button>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="college">College Name:</label><br>
+            <input type="text" id="college" name="college" required><br>
+
+            <label for="contact">Contact Number:</label><br>
+            <input type="tel" id="contact" name="contact" required><br>
+
+            <label for="event1">Select Event 1:</label><br>
+            <select id="event1" name="event1">
+                <option value="event1">Event 1</option>
+                <option value="event2">Event 2</option>
+                <option value="event3">Event 3</option>
+            </select><br>
+
+            <label for="event2">Select Event 2:</label><br>
+            <select id="event2" name="event2">
+                <option value="event1">Event 1</option>
+                <option value="event2">Event 2</option>
+                <option value="event3">Event 3</option>
+            </select><br>
+            <div class="payment-container">
+                <p id="payment-amount">Total Amount: 0 Rs</p>
+                <p>take screenshot of payment and send us !!</p>
+                <img id="barcode-image" src="" alt="QR Code">
+                
+            </div>
+            <label for="image">Upload Payment Image:</label><br>
+            <input type="file" id="image" name="image" accept="image/*" required><br>
+            <button type="submit" id="submit-registration">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
