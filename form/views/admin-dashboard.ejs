@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .action-buttons {
+            margin: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            th, td {
+                display: block;
+                width: 100%;
+            }
+        }
+        .success{
+            text-align: center;
+    padding: auto;
+background-color:rgba(60, 169, 107, 0.6);
+height: auto;
+border-radius: 5px;
+
+
+}
+.error{
+    text-align: center;
+    padding: auto;
+    height: auto;
+    border-radius: 5px;
+
+background-color: rgba(255, 99, 71, 0.6);
+}
+.message .success h2{
+    color: white;
+}
+.message .error h2{
+ color: white;
+}
+    </style>
+</head>
+<body>
+
+    <div class="message">
+        <div class="success">
+            <h2><%= success %></h2>
+        </div>
+        <div class="error">
+        <h2> <%= error %> </h2>
+        </div>
+    </div>
+    <div class="container">
+        <h1>User Information</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>College</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Event Day 1</th>
+                    <th>Event Day 2</th>
+                    <th>Event Day 3</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach((user) => { %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.collegeName %></td>
+                        <td><%= user.mobile %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.eventDay1 %></td>
+                        <td><%= user.eventDay2 %></td>
+                        <td><%= user.eventDay3 %></td>
+                        <td><img src="/uploads/<%= user.paymentImage %>" width="100"></td>
+                        <td class="action-buttons">
+                            <button onclick="approveUser('<%= user.id %>')">Approve</button>
+                            <a href="/download/<%= user.id %>"><button>Download</button></a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        function approveUser(userId) {
+            // Implement the logic to approve the user with the given ID
+            // You can make an AJAX request to the server to update the user's approval status
+            // For example, you can send a POST request to an endpoint like /approveUser/:userId
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.event-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event-day {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px; /* Adjust maximum width based on your design */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    max-width: 240px; /* Adjust maximum width based on your design */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1rem;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.register-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+}
+
+/* Media query for screens smaller than 768px (typical mobile screens) */
+@media screen and (max-width: 768px) {
+    .event-day {
+        max-width: 100%; /* Full width on small screens */
+    }
+
+    .event-card {
+        max-width: 100%; /* Full width on small screens */
+    }
+}
+
+
+/* Existing CSS styles remain unchanged */
+/* Existing CSS styles remain unchanged */
+
+/* Overlay for background when form is open */
+.overlay {
+    overflow-y:scroll ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust the opacity to control the blur effect */
+    z-index: 998; /* Place it below the popup form */
+    display: none; /* Initially hidden */
+}
+
+
+.popup-overlay {
+    overflow-y: scroll;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-form {
+    height: 200vh;
+    
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    z-index: 999;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Media query for screens smaller than 768px (typical mobile screens) */
+@media screen and (max-width: 768px) {
+    .event-day {
+        max-width: 100%; /* Full width on small screens */
+    }
+
+    .event-card {
+        max-width: 100%; /* Full width on small screens */
+    }
+}
+
+/* Existing CSS styles remain unchanged */
+
+/* Styling for labels */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Styling for form elements */
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Media query for screens smaller than 768px (typical mobile screens) */
+@media screen and (max-width: 768px) {
+    .event-day {
+        max-width: 100%; /* Full width on small screens */
+    }
+
+    .event-card {
+        max-width: 100%; /* Full width on small screens */
+    }
+}
+
+/* Existing CSS styles remain unchanged */
+
+/* Styling for the popup form */
+.popup-form {
+    
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Styling for labels */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Styling for form elements */
+input,
+select,
+textarea {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for the submit button */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Existing CSS styles remain unchanged */
+
+/* Existing CSS styles remain unchanged */
+
+/* Existing CSS styles remain unchanged */
+
+/* Styling for the Day 3 options */
+.day3-options, .day1-options ,.day2-options {
+    width: 80%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for the custom dropdown container */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+/* Styling for the selected options */
+.selected-options {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styling for the options list */
+.options-list {
+    width: 300px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for the checkboxes and labels */
+.custom-dropdown .option {
+    display: flex;
+    align-items: center;
+}
+.options-list input{
+    width: 20px;
+    margin-top: 15px;
+}
+
+.custom-dropdown input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+
+.custom-dropdown input[type="checkbox"]:disabled + label {
+    text-decoration: line-through;
+    color: #ccc; /* You can adjust the color as needed */
+}
+/* Styling for the submit button */
+.button {
+    margin: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.qr-code-container {
+    text-align: center;
+    display: none;
+}
+
+#generateQRButton {
+    display: block;
+    margin: 10px auto;
+}
+
+#generateQRButton:focus {
+    outline: none;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+}
+
+.day {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
